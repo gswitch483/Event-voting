@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grand Voting Competition - Sierra Leone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+      </div>
+      <h1 class="title">Grand Voting Competition</h1>
+      <p class="subtitle">Sierra Leone 2025</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" id="totalVotes">0</div>
+          <div class="stat-label">Total Votes</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Categories</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">30</div>
+          <div class="stat-label">Contestants</div>
+        </div>
+      </div>
+
+      <div class="voting-card">
+        <h2 class="section-title">Cast Your Vote</h2>
+        <form id="votingForm">
+          <div class="form-group">
+            <label class="form-label" for="voterName">Full Name *</label>
+            <input type="text" id="voterName" class="form-input" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="voterPhone">Phone Number *</label>
+            <input type="tel" id="voterPhone" class="form-input" placeholder="+232 XX XXX XXXX" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="category">Category *</label>
+            <select id="category" class="form-select" required>
+              <option value="">Select a category</option>
+              <option value="beauty">Beauty Contest (le 500)</option>
+              <option value="dolomite">Dolomite Competition (le 300)</option>
+              <option value="filing">Filing Challenge (le 200)</option>
+              <option value="youth">Youth Leadership (le 400)</option>
+              <option value="sim">SIM Innovation (le 350)</option>
+              <option value="place">Best Place (le 250)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Select Contestant *</label>
+            <div class="contestants-grid" id="contestantsGrid"></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Payment Method *</label>
+            <div class="payment-methods">
+              <div class="payment-method" data-method="mobile_money">
+                <div>📱</div><div>Mobile Money</div>
+              </div>
+              <div class="payment-method" data-method="bank_transfer">
+                <div>🏦</div><div>Bank Transfer</div>
+              </div>
+              <div class="payment-method" data-method="cash">
+                <div>💵</div><div>Cash</div>
+              </div>
+              <div class="payment-method" data-method="card">
+                <div>💳</div><div>Card</div>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit Vote</button>
+        </form>
+
+        <div id="successMessage" class="success-message hidden">
+          <h3>Vote Submitted Successfully!</h3>
+          <p>Transaction ID: <span id="transactionId"></span></p>
+          <p>Thank you for participating in the Grand Voting Competition!</p>
+        </div>
+
+        <div id="errorMessage" class="error-message hidden">
+          <h3>Error Submitting Vote</h3>
+          <p id="errorText"></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+            </html>
